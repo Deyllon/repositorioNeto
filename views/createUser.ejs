@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sitezinho Lecau</h1>
+    <form action="/security/createUser" method="post">
+        <label for="user[username]">Escolha um nome de usuario</label>
+        <input type="text" name="user[username]" id="user[username]">
+        <label for="user[email]">Escolha um email</label>
+        <input type="text" name="user[email]" id="user[email]">
+        <label for="user[password]">Escolha uma senha</label>
+        <input type="text" name="user[password]" id="user[password]">
+        <button type="submit"></button>
+    </form>
+    <h2>Já tem uma conta? <a href="/security/login">clique aqui para ir pra aréa de login</a></h2>
+</body>
+</html>

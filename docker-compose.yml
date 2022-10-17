@@ -1,0 +1,31 @@
+version: '3.2'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=Oitentaeum81"
+      - "POSTGRES_DB=mydatabase"
+    ports:
+      - 5441:5432
+    networks:
+      - mynet
+  backend: 
+    restart: always
+    build:
+      context: ./
+    volumes:
+      - .:/src
+    depends_on:
+      - db
+    environment:
+      - PORT= 4000
+      - POSTGRES_URL= postgresql://postgres:Oitentaeum81@db:5441/mydatabase
+    ports:
+      - 4000:4000
+    networks:
+      - mynet
+networks:
+  mynet:
+    driver: bridge      
